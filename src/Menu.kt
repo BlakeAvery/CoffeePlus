@@ -48,7 +48,7 @@ fun main(args: Array<String>) {
             else -> kotlin.system.exitProcess(0)
         }
     }
-    /* aaaa@ while(true) { To be implemented later, should be control for changing price and viewing product info
+    aaaa@ while(true) {
 
-    } */
+    }
 }
