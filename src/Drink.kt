@@ -5,6 +5,6 @@ data class Drink(val name: String, val type: String, var price: Float) {
     }
 
     override fun toString(): String {
-        return "$name, a $type drink, costs $$price."
+        return "$name, a $type, costs $$price."
     }
 }
