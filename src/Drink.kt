@@ -1,4 +1,4 @@
-data class Drink(val name: String, val type: String, var price: Float) {
+data class Drink(private val name: String, private val type: String, var price: Float) {
     fun PriceSet(newPrice: Float) {
         price = newPrice
         println("New price $$price set.")

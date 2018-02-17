@@ -1,29 +1,28 @@
-import java.lang.*
 fun addFood(): ArrayList<Food> {
-    var foodies = ArrayList<Food>()
+    val foodies = ArrayList<Food>()
     manko@ while(true) {
         print("Enter food name (or break to exit): ")
-        var nom = readLine() ?: ""
-        if (nom.equals("break")) break@manko
+        val nom = readLine() ?: ""
+        if (nom == "break") break@manko
         print("Enter type of food: ")
-        var v = readLine() ?: ""
+        val v = readLine() ?: ""
         print("Enter price (USD): ")
-        var mons: Float = readLine()?.toFloat() ?: 0.0F
+        val mons: Float = readLine()?.toFloat() ?: 0.0F
         foodies.add(Food(nom, v, mons))
     }
     return foodies
 }
 
 fun addDrink(): ArrayList<Drink> {
-    var drinkies = ArrayList<Drink>()
+    val drinkies = ArrayList<Drink>()
     manko@ while(true) {
         print("Enter drink name (or break to exit): ")
-        var nom = readLine() ?: ""
-        if (nom.equals("break")) break@manko
+        val nom = readLine() ?: ""
+        if (nom == "break") break@manko
         print("Enter type of drink: ")
-        var v = readLine() ?: ""
+        val v = readLine() ?: ""
         print("Enter price (USD): ")
-        var mons: Float = readLine()?.toFloat() ?: 0.0F
+        val mons: Float = readLine()?.toFloat() ?: 0.0F
         drinkies.add(Drink(nom, v, mons))
     }
     return drinkies
@@ -31,12 +30,12 @@ fun addDrink(): ArrayList<Drink> {
 fun menuDisplay(Food: ArrayList<Food>, Drink: ArrayList<Drink>) {
     println("-----Food Menu-----")
     for(x in 0 until Food.size) {
-        var printer = Food[x]
+        val printer = Food[x]
         println(printer.toString())
     }
     println("\n-----Drink Menu-----")
     for(x in 0 until Drink.size) {
-        var printer = Drink[x]
+        val printer = Drink[x]
         println(printer.toString())
     }
 }
@@ -74,18 +73,18 @@ fun main(args: Array<String>) {
                     1 -> {
                         print("Modify which food item? Use index values, starting from 0. ")
                         x = readLine()?.toInt() ?: 0
-                        var modFood = FoodList[x]
+                        val modFood = FoodList[x]
                         print("Enter new price (Current price is $" + modFood.price)
-                        var pp = readLine()?.toFloat() ?: 1.0F
+                        val pp = readLine()?.toFloat() ?: 1.0F
                         modFood.PriceSet(pp)
                         FoodList[x] = modFood
                     }
                     2 -> {
                         print("Modify which drink item? Use index values, starting from 0. ")
                         x = readLine()?.toInt() ?: 0
-                        var modDrink = DrinkList[x]
+                        val modDrink = DrinkList[x]
                         print("Enter new price (Current price is $" + modDrink.price)
-                        var pp = readLine()?.toFloat() ?: 1.0F
+                        val pp = readLine()?.toFloat() ?: 1.0F
                         modDrink.PriceSet(pp)
                         DrinkList[x] = modDrink
                     }
@@ -99,13 +98,13 @@ fun main(args: Array<String>) {
                     1 -> {
                         print("Print which food item? Use index values, starting from 0. ")
                         x = readLine()?.toInt() ?: 0
-                        var modFood = FoodList[x]
+                        val modFood = FoodList[x]
                         print(modFood.toString())
                     }
                     2 -> {
                         print("Print which drink item? Use index values, starting from 0. ")
                         x = readLine()?.toInt() ?: 0
-                        var modDrink = DrinkList[x]
+                        val modDrink = DrinkList[x]
                         print(modDrink.toString())
                     }
                     else -> println("Invalid option.")
