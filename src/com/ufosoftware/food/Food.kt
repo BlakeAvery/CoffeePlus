@@ -1,5 +1,7 @@
-data class Food(private val name: String, private val type: String, var price: Float) {
-    fun PriceSet(newPrice: Float) {
+package com.ufosoftware.food
+
+open class Food(private val name: String, private val type: String, var price: Float) {
+    fun priceSet(newPrice: Float) {
         price = newPrice
         println("New price $$price set.")
     }

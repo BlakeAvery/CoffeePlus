@@ -1,3 +1,5 @@
+import com.ufosoftware.food.*
+
 fun addFood(): ArrayList<Food> {
     val foodies = ArrayList<Food>()
     manko@ while(true) {
@@ -28,12 +30,12 @@ fun addDrink(): ArrayList<Drink> {
     return drinkies
 }
 fun menuDisplay(Food: ArrayList<Food>, Drink: ArrayList<Drink>) {
-    println("-----Food Menu-----")
+    println("-----com.ufosoftware.food.Food Menu-----")
     for(x in 0 until Food.size) {
         val printer = Food[x]
         println(printer.toString())
     }
-    println("\n-----Drink Menu-----")
+    println("\n-----com.ufosoftware.food.Drink Menu-----")
     for(x in 0 until Drink.size) {
         val printer = Drink[x]
         println(printer.toString())
@@ -45,7 +47,7 @@ fun main(args: Array<String>) {
     var FoodList = ArrayList<Food>()
     var x: Int
     breaker@ while(true) {
-        print("Add food or drink? (1: Food, 2: Drink) ")
+        print("Add food or drink? (1: com.ufosoftware.food.Food, 2: com.ufosoftware.food.Drink) ")
         print("\nEnter -1 to exit menu creation. ")
         x = readLine()?.toInt() ?: -1
         when (x) {
@@ -76,7 +78,7 @@ fun main(args: Array<String>) {
                         val modFood = FoodList[x]
                         print("Enter new price (Current price is $" + modFood.price)
                         val pp = readLine()?.toFloat() ?: 1.0F
-                        modFood.PriceSet(pp)
+                        modFood.priceSet(pp)
                         FoodList[x] = modFood
                     }
                     2 -> {
@@ -85,7 +87,7 @@ fun main(args: Array<String>) {
                         val modDrink = DrinkList[x]
                         print("Enter new price (Current price is $" + modDrink.price)
                         val pp = readLine()?.toFloat() ?: 1.0F
-                        modDrink.PriceSet(pp)
+                        modDrink.priceSet(pp)
                         DrinkList[x] = modDrink
                     }
                     else -> println("Invalid option.")
